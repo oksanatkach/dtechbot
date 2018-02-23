@@ -1,32 +1,19 @@
-## Use Azure app service editor
+# D-Tech Bot
 
-1. make code change in the online editor: Botloh (Web App Bot) > Build > Open online code editor
+This is a chatbot for a conference built with Bot Builder SDK.
 
-Your code changes go live as the code changes are saved.
+## Main Features
 
-## Use Visual Studio Code
+### Information Level
 
-### Build and debug
-1. Pull from git OR download source code zip: Botloh (Web App Bot) > Build > Download zip file
-2. open the source folder in  Visual Studio Code
-3. make code changes
-4. Double check keys in env variables (`.env` file)
-5. download and run [botframework-emulator](https://emulator.botframework.com/)
-6. connect the emulator to http://localhost:3987/api/messages  (Misrosoft App ID and password are in `.env`)
+Basic UI level: the menu that gets you to the most relevant information.
 
-### Publish back
+### Payment Level
 
-**Note**: continuous integration is not used due to private git repository (not accesible from Azure)
+There is basic integration with Coinbase and Block.io which allows users to pay for tickets with cryptocurrency.
 
-Use either command:
+### NLU Level
 
-```
-npm run publish
-node publish.js
-Launch 'publish' command from VSCode
-```
+Most UI requests can be performed by simply asking the bot about them: the bot uses LUIS to determine the intent of the user's response. There are also many 'hidden' features, for instance, if you ask something like "What is the current rate of bitcoin?" or "bitcoin rate", the bot will parse coinmarketcap and send you the rate of one bitcoin in dollars. This cannot be accessed through the button menu.
 
-## Use continuous integration
-
-If you have setup continuous integration, then your bot will automatically deployed when new changes are pushed to the source repository.
-
+LUIS intent analyzer doesn't perform perfectly. From what I can understand, it's a simple maxent classifier. It will return a ton of false positives.
