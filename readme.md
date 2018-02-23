@@ -14,6 +14,6 @@ There is basic integration with Coinbase and Block.io which allows users to pay 
 
 ### NLU Level
 
-Most UI requests can be performed by simply asking the bot about them: the bot uses LUIS to determine the intent of the user's response. There are also many 'hidden' features. For instance, if you ask something like "What is the current rate of bitcoin?" or "bitcoin rate" or something similar, the bot will parse coinmarketcap and send you the rate of one bitcoin in dollars. This cannot be accessed through the button menu.
+Most UI requests can be performed by simply asking the bot about them: the bot uses LUIS (Microsoft's Natural Language Understanding service) to determine the intent of the user's response. There are also many 'hidden' features. For instance, if you ask something like "What is the current rate of bitcoin?" or "bitcoin rate" or something similar, the bot will parse coinmarketcap and send you the rate of one bitcoin in dollars. This cannot be accessed through the button menu.
 
 LUIS intent analyzer doesn't perform perfectly. From what I can understand, it's a simple maxent classifier. It will return a ton of false positives.
